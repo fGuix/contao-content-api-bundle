@@ -1,5 +1,7 @@
 services:
     DieSchittigs\ContaoContentApiBundle\Controller\ContentApiController:
+        autowire: true
+        autoconfigure: true
         arguments:
             - '@contao.framework'
         tags:
