@@ -12,7 +12,7 @@ JS-framework. All while still using the great Contao Backend.
 
 ## Requirements
 
-You'll need an up-and-running **Contao 4.4.x** installation.
+You'll need an up-and-running **Contao 4.13.x** installation.
 Please note that the API is **not compatible with Contao 3.x**.
 
 ## Installation
