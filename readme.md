@@ -16,6 +16,9 @@ To add this version to your project, you need to add the following in your compo
 
 notice the name contao-content-api-**bundle** (on packagist, it's named contao-content-api)
 
+known issues :
+-  vendor/dieschittigs/contao-content-api-bundle/src/Resources/contao/Sitemap.php:36 -> url of page not generated correctly if domain is set in root page
+
 
 # Contao Content API
 
