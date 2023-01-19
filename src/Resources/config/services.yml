@@ -1,9 +1,6 @@
 services:
-    _defaults:
-        autowire: true
-        autoconfigure: true
-        public: false
-
-    App\Controller\:
-        resource: "@ContaoContentApiBundle/Controller"
-        public: true
+    DieSchittigs\ContaoContentApiBundle\Controller\ContentApiController:
+        arguments:
+            - '@contao.framework'
+        tags:
+            - controller.service_arguments
