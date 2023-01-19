@@ -1,3 +1,22 @@
+Fork notes : 
+
+Adding support for contao 4.13/php8(symfony 5.4) regarding my needs (so it's incomplete for now).
+
+To add this version to your project, you need to add the following in your composer.json
+
+> "repositories": [
+>     {
+>         "type": "vcs",
+>         "url": "https://github.com/fGuix/contao-content-api-bundle.git"
+>     }
+>     ],
+
+> "require": {
+>        "dieschittigs/contao-content-api-bundle": "^3.0.0",
+
+notice the name contao-content-api-**bundle** (on packagist, it's named contao-content-api)
+
+
 # Contao Content API
 
 We at [Die Schittigs](http://www.dieschittigs.de) love
