@@ -37,7 +37,7 @@ class Page extends AugmentedContaoModel
             throw new ContentApiNotFoundException('Page not found at URL '.$url);
         }
         $page = new self($_page['id']);
-        $page->exactUrlMatch = $_page->exactUrlMatch;
+        $page->exactUrlMatch = $_page['exactUrlMatch'];
 
         return $page;
     }
