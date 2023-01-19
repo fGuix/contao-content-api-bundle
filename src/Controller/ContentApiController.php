@@ -2,6 +2,7 @@
 
 namespace DieSchittigs\ContaoContentApiBundle\Controller;
 
+use Contao\CoreBundle\Framework\ContaoFramework;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -30,6 +31,10 @@ class ContentApiController extends AbstractController
     private $apiUser;
     private $lang = null;
 
+    public function __construct(private ContaoFramework $contaoFramework)
+    {
+    }
+    
     /**
      * Called at the begin of every request.
      *
@@ -77,7 +82,7 @@ class ContentApiController extends AbstractController
             System::loadLanguageFile('default', $this->lang);
         }
         // Initialize Contao
-        $this->container->get('contao.framework')->initialize();
+        $this->contaoFramework->initialize();
         $this->apiUser = new ApiUser();
         if (!defined('BE_USER_LOGGED_IN')) {
             define('BE_USER_LOGGED_IN', false);
@@ -254,6 +259,7 @@ class ContentApiController extends AbstractController
         $readers = $this->getParameter('content_api_readers');
         $url = $request->query->get('url', '/');
         $exactMatch = false;
+        $readerFound = false;
         try {
             $page = Page::findByUrl($url);
             $exactMatch = true;
