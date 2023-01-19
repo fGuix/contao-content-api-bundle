@@ -15,7 +15,9 @@ class ApiUser extends Frontend implements ContaoJsonSerializable
     {
         $this->import('FrontendUser', 'User');
         parent::__construct();
-        define('FE_USER_LOGGED_IN', $this->getLoginStatus('FE_USER_AUTH'));
+        if(!defined('FE_USER_LOGGED_IN')){
+            define('FE_USER_LOGGED_IN', $this->getLoginStatus('FE_USER_AUTH'));
+        }
     }
 
     public function toJson(): ContaoJson
